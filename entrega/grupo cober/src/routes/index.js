@@ -10,12 +10,7 @@ router.post("/send-email", (req, res) => {
      <h1>Se registro</h1>
      <li>${email}</li>
     `;
-  // const CLIENTD_ID =
-  //   "648047875520-48v1j5tpjk6dt980ci3gqrf4mc6dkf7g.apps.googleusercontent.com";
-  // const CLIENTD_SECRET = "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";
-  // const REDIRECT_URI = "https://developers.google.com/oauthplayground";
-  // const REFRESH_TOKEN =
-  //   "1//04pDqE7Yq-vAKCgYIARAAGAQSNwF-L9Ir7TYbSjvKwrD1f5isU4SZB5sc78MgLZjWEdI7iPyHtV16VceK9TUqpShZ5vXhMMM2T4s";
+
   const { CLIENT_ID, CLIENT_SECRET, REDIRECT_URI, REFRESH_TOKEN } = process.env;
 
   const oAuth2Client = new google.auth.OAuth2(
