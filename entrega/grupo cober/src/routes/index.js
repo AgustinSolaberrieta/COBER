@@ -44,7 +44,7 @@ router.post("/send-email", (req, res) => {
       const mailOptions = {
         from: "Pag Web ",
         to: "asolaberrietaw08@gmail.com",
-        subject: "Pru   eba",
+        subject: "Prueba",
         html: contentHTML,
       };
       const result = await transporter.sendMail(mailOptions);
