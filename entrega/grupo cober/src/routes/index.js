@@ -6,11 +6,10 @@ const router = express.Router();
 
 router.post("/send-email", (req, res) => {
   const { email } = req.body;
-  contentHTML = `
-     <h1>Se registro</h1>
-     <li>${email}</li>
-    `;
-
+  const contentHTML = `
+  <h1>Nuevo registro de usuario</h1>
+  <p>Se ha registrado un nuevo usuario con el correo: ${email}</p>
+`;
   const { CLIENT_ID, CLIENT_SECRET, REDIRECT_URI, REFRESH_TOKEN } = process.env;
 
   const oAuth2Client = new google.auth.OAuth2(
@@ -23,7 +22,7 @@ router.post("/send-email", (req, res) => {
   async function sendMail() {
     try {
       const accessToken =
-        "ya29.a0Ad52N38KhcVmv0npFu0N4Ims9nEBIGA5Xc4n-kQ0BNzbU6jj2K7_1tAQKMkUYMcsdWjLpwqTiC68O0gy3vH7YVtfw-QpBNCy-9jRFpGMRG1F5N-zhuAJxXkBDYWZBpmF1M1nTk6S0_a78Jq0MdhyBl2eS4-s_OXJjanpaCgYKAUwSARMSFQHGX2Mio484SDfUGS00mUYn6BbmwA0171";
+        "ya29.a0Ad52N393DP7GouPCwAh1FyD85EcRYw5i7v-zUJTISqUbPwHLxAFnnDcLlTvRXYAlkLXzE8I_DRmCqIW6OXNBbZQyUVp59iKeNOGGQheJUSnSjPyUx__cNtGSESZlcWbzyd1EdYZdnKnclrsFOeDuTPrS7hsMs3AZvRRyaCgYKAXgSARMSFQHGX2MiZr91jrIsA9efpuPaw9KqWA0171";
 
       const transporter = nodemailer.createTransport({
         service: "gmail",
@@ -37,9 +36,9 @@ router.post("/send-email", (req, res) => {
         },
       });
       const mailOptions = {
-        from: "Pag Web ",
+        from: "Pagina  Web",
         to: "asolaberrietaw08@gmail.com",
-        subject: "Prueba",
+        subject: "Grupo Cober",
         html: contentHTML,
       };
       const result = await transporter.sendMail(mailOptions);
