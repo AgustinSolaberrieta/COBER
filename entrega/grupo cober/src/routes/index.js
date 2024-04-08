@@ -37,7 +37,7 @@ router.post("/send-email", (req, res) => {
       });
       const mailOptions = {
         from: "Pagina  Web",
-        to: "asolaberrietaw08@gmail.com",
+        to: " admin@grupocober.online",
         subject: "Grupo Cober",
         html: contentHTML,
       };
