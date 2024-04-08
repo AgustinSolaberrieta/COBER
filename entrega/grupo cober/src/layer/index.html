@@ -461,12 +461,12 @@
         </div>
       </section>
       <script>
-        // Obtener el elemento con la clase "ui-text-intro" dentro de "section" con la clase "ui-section-close"
+       
         var textIntroElement = document.querySelector(
           ".ui-section-close .ui-text-intro"
         );
 
-        // Crear una función para obtener el nombre del día
+       
         function getDayName(dayIndex) {
           var daysOfWeek = [
             "Domingo",
@@ -480,7 +480,7 @@
           return daysOfWeek[dayIndex];
         }
 
-        // Crear una función para obtener el nombre del mes
+        
         function getMonthName(monthIndex) {
           var monthsOfYear = [
             "enero",
@@ -499,16 +499,13 @@
           return monthsOfYear[monthIndex];
         }
 
-        // Crear una nueva instancia de Date para obtener la fecha actual
         var currentDate = new Date();
 
-        // Obtener el nombre del día, el día del mes, el nombre del mes y el año
         var dayName = getDayName(currentDate.getDay());
         var dayOfMonth = currentDate.getDate();
         var monthName = getMonthName(currentDate.getMonth());
         var year = currentDate.getFullYear();
 
-        // Construir la cadena con el formato deseado
         var formattedDate =
           "(" +
           dayName +
@@ -520,7 +517,6 @@
           year +
           ")";
 
-        // Reemplazar el contenido del elemento con la clase "ui-text-intro" con la fecha formateada
         textIntroElement.textContent = formattedDate;
       </script>
       
